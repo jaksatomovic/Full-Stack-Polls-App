@@ -10,14 +10,14 @@ class ServerError extends React.Component<{}, {}> {
     return (
       <div className="server-error-page">
         <h1 className="server-error-title">500</h1>
-        <div className="server-error-desc">서버 에러가 발생했습니다.</div>
+        <div className="server-error-desc">Error.</div>
         <Link to="/">
           <Button
             className="server-error-go-back-btn"
             type="primary"
             size="large"
           >
-            돌아가기
+            XXX
           </Button>
         </Link>
       </div>

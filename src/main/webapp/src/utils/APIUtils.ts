@@ -18,7 +18,7 @@ const req = axios.create({
   baseURL: API_BASE_URL
 });
 
-// res.data.success: boolean or res.status: number로 성공 여부 검증
+// res.data.success: boolean or res.status: number
 const request = async (options: IRequestOptions) => {
   let headers: IRequestHeaders = { 'Content-Type': 'application/json' };
 

@@ -68,13 +68,13 @@ class Signup extends React.Component<{} & RouteComponentProps, ISignupState> {
       await signup(signupRequest);
       notification.success({
         message: 'Polling App',
-        description: '가입에 성공했습니다. 로그인 해주세요'
+        description: ''
       });
       this.props.history.push('/login');
     } catch (error) {
       notification.error({
         message: 'Polling App',
-        description: '오류가 발생했습니다'
+        description: ''
       });
     }
   };
@@ -274,7 +274,6 @@ class Signup extends React.Component<{} & RouteComponentProps, ISignupState> {
     const usernameValue = this.state.username.value;
     const usernameValidation = this.validateUsername(usernameValue);
 
-    // 이미 form의 validation을 통과하지 못한 경우
     if (usernameValidation.validateStatus === 'error') {
       this.setState({
         username: {
@@ -285,7 +284,6 @@ class Signup extends React.Component<{} & RouteComponentProps, ISignupState> {
       return;
     }
 
-    // form의 validation은 통과, 중복 확인 validation을 시작
     this.setState({
       username: {
         value: usernameValue,
@@ -314,7 +312,6 @@ class Signup extends React.Component<{} & RouteComponentProps, ISignupState> {
         });
       }
     } catch (error) {
-      // 알 수 없는 서버 에러. 일단 success 처리하고, submit시 다시 확인하도록
       this.setState({
         username: {
           value: usernameValue,

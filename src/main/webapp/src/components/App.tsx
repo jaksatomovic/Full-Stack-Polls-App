@@ -39,7 +39,7 @@ class App extends React.Component<{} & RouteComponentProps, IAppState> {
   private handleLogin = () => {
     notification.success({
       message: 'Polling App',
-      description: '로그인에 성공했습니다'
+      description: ''
     });
     this.loadCurrentUser();
     this.props.history.push('/');
@@ -70,7 +70,7 @@ class App extends React.Component<{} & RouteComponentProps, IAppState> {
     this.props.history.push('/');
     notification.success({
       message: 'Polling App',
-      description: '로그아웃 되었습니다'
+      description: ''
     });
   };
 

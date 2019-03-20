@@ -24,12 +24,12 @@ const LoginForm: React.SFC<ILoginFormProps & FormComponentProps> = props => {
           if (error.response.status === 401) {
             notification.error({
               message: 'Polling App',
-              description: '유저명과 패스워드를 확인해주세요'
+              description: ''
             });
           } else {
             notification.error({
               message: 'Polling App',
-              description: '에러가 발생했습니다'
+              description: ''
             });
           }
         }
