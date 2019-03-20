@@ -265,10 +265,10 @@ public class PollService {
                 .distinct()
                 .collect(Collectors.toList());
 
-        List<User> creators = userRepository.findByIdIn(creatorIds);
+        List<User> creators = userRepository.findAllById(creatorIds); //findAllByIdIn
         Map<Long, User> creatorMap = creators.stream()
                 .collect(Collectors.toMap(User::getId, Function.identity()));
 
-        return creatorMap;
+        return  creatorMap;
     }
 }
